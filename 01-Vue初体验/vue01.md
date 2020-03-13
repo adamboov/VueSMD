@@ -8,9 +8,9 @@
 ## 掌握el data methods
   * el 类型：string | HTMLElement
         作用： 决定之后Vue实例会管理哪个DOM
-  *data 类型： Object | Function(组件当中data必须是一个函数)
+  * data 类型： Object | Function(组件当中data必须是一个函数)
         作用： Vue实例对应的数据对象
-  *methods 类型 { [ key: string ]: Function }
+  * methods 类型 { [ key: string ]: Function }
         作用：定义方法，在其他地方调用，也可在指令中使用
 
 ## 方法与函数的区别：
