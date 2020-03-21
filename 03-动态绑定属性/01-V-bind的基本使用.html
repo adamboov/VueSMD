@@ -8,26 +8,15 @@
 </head>
 <body>
   <div id="app">
-    <h2>当前计数：{{counter}}</h2>
-    <!-- <button v-on:click="counter++">+</button>
-    <button v-on:click="counter--">-</button> -->
-    <button v-on:click="add">+</button>
-    <button @click="sub">-</button>
+    <img v-bind:src="imgURL" alt="">
   </div>
 <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script type="text/javascript">
   const app = new Vue({
-    el: "#app",
+    el: '#app',
     data: {
-      counter: 0
-    },
-    methods: {
-      add: function(){
-          this.counter++;
-      },
-      sub: function(){
-          this.counter--;
-      }
+      message: '你好！',
+      imgURL: 'https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png'
     }
   })
 </script>
