@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style media="screen">
+      .active {
+          color: red;
+      }
+      .line {
+          font-weight: 100;
+      }
+  </style>
 </head>
 <body>
   <div id="app">
-    <img v-bind:src="imgURL" alt="">
+    <!-- <img v-bind:src="imgURL" alt=""> -->
+    <h2 v-bind:class="{active: isActive, line: isLine}">{{message}}</h2>
+    <button v-on:click="btnClick">变色</button>
+    <button v-on:click="btnFont">变粗</button>
   </div>
 <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script type="text/javascript">
@@ -16,8 +27,18 @@
     el: '#app',
     data: {
       message: '你好！',
-      imgURL: 'https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png'
-    }
+      imgURL: 'https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png',
+      isActive: true,
+      isLine: true
+  },
+  methods: {
+      btnClick: function () {
+          this.isActive = !this.isActive;
+      },
+      btnFont: function () {
+          this.isLine = !this.isLine;
+      }
+  }
   })
 </script>
 </body>
