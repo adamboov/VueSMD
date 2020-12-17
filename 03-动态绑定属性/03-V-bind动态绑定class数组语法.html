@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>V-bind指令数组</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2 class="title" :class="['active','line']">{{message}}</h2>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script type="text/javascript">
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊！'
+            }
+        })
+    </script>
+</body>
+
+</html>
