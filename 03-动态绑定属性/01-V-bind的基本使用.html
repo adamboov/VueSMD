@@ -20,6 +20,7 @@
     <h2 v-bind:class="{active: isActive, line: isLine}">{{message}}</h2>
     <button v-on:click="btnClick">变色</button>
     <button v-on:click="btnFont">变粗</button>
+    <h2 v-bind:class="getClasses()">{{message}}</h2>
   </div>
 <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
 <script type="text/javascript">
@@ -37,6 +38,9 @@
       },
       btnFont: function () {
           this.isLine = !this.isLine;
+      },
+      getClasses: function () {
+          return {active: this.isActive, line: this.isLine}
       }
   }
   })
