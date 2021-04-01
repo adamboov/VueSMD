@@ -1,20 +1,30 @@
 <template>
   <div class="banner-container">
-    <ul class="images" style="width: 300%">
+    <ul
+      class="images"
+      :style="{
+        width: banners.length * 100 + '%',
+        marginLeft: -index * 100 + '%',
+      }"
+    >
       <li v-for="(item, index) in banners" :key="index">
         <a :href="item.link"><img :src="item.url" alt="" /></a>
       </li>
     </ul>
     <ul class="dots">
-      <li class="active"></li>
-      <li></li>
-      <li></li>
+      <li
+        v-for="(item, i) in banners"
+        :key="i"
+        :class="{ active: i === index }"
+        @click="index = i"
+      ></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
+  //
   props: {
     banners: {
       //  属性类型必须是数组
@@ -23,6 +33,52 @@ export default {
       required: true,
     },
   },
+  //
+  data() {
+    return {
+      //  当前显示的是第几张
+      index: 1,
+      //  计时器状态
+      timer: null,
+    };
+  },
+  //
+  methods: {
+    //  开始自动切换
+    autoStart() {
+      if (this.timer) {
+        return;
+      }
+      setInterval(() => {
+        this.index = (this.index + 1) % this.banners.length;
+      }, 2000);
+    },
+    //  停止自动切换
+    autoStop() {
+      clearInterval(this.timer);
+      this.timer = null;
+    },
+  },
+  //  组件生命周期开始
+  //  无提取的数据 无响应式
+  beforeCreate() {},
+  //  提取信息 响应式
+  created() {},
+  //  无真实DOM
+  beforeMount() {},
+  //  真实DOM已经呈现
+  mounted() {
+    this.autoStart();
+  },
+  //  data prop变动 重新渲染之前
+  beforeUpdate() {},
+  //  重新渲染之后
+  updated() {},
+  //  组件不需要再呈现
+  beforeDestroy() {},
+  //  销毁组件
+  destroyed() {},
+  //  组件生命周期结束
 };
 </script>
 
