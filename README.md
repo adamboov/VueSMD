@@ -1,4 +1,7 @@
 # VueSMD
+# 配置源地址
+    npm config set registry http://registry.npm.taobao.org/
+    npm config get registry  
 
 ## 特点  
     渐进式
