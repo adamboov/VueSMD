@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-container">
+  <div class="banner-container" @mouseenter="autoStop" @mouseleave="autoStart">
     <ul
       class="images"
       :style="{
@@ -32,6 +32,11 @@ export default {
       //  必须要传递该属性类型
       required: true,
     },
+    duration: {
+      type: Number,
+      required: true,
+      default: 2000,
+    },
   },
   //
   data() {
@@ -49,13 +54,16 @@ export default {
       if (this.timer) {
         return;
       }
-      setInterval(() => {
+      console.log(this.timer);
+      this.timer = setInterval(() => {
         this.index = (this.index + 1) % this.banners.length;
-      }, 2000);
+        console.log("定时器--" + this.index);
+      }, this.duration);
     },
     //  停止自动切换
     autoStop() {
       clearInterval(this.timer);
+      console.log("停止切换" + this.timer);
       this.timer = null;
     },
   },
@@ -63,13 +71,13 @@ export default {
   //  无提取的数据 无响应式
   beforeCreate() {},
   //  提取信息 响应式
-  created() {},
+  created() {
+    this.autoStart();
+  },
   //  无真实DOM
   beforeMount() {},
   //  真实DOM已经呈现
-  mounted() {
-    this.autoStart();
-  },
+  mounted() {},
   //  data prop变动 重新渲染之前
   beforeUpdate() {},
   //  重新渲染之后
@@ -77,12 +85,15 @@ export default {
   //  组件不需要再呈现
   beforeDestroy() {},
   //  销毁组件
-  destroyed() {},
+  destroyed() {
+    //  销毁组件后记得清除计时器
+    this.autoStop();
+  },
   //  组件生命周期结束
 };
 </script>
 
-<style>
+<style scoped>
 .banner-container {
   height: 350px;
   position: relative;

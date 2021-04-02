@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div style="width: 1080px; margin: 0px auto">
-      <Banner :banners="banners" />
+    <div style="width: 1080px; margin: 0 auto">
+      <Banner :banners="banners" :duration="3000" />
     </div>
   </div>
 </template>
