@@ -69,21 +69,27 @@ export default {
   },
   //  组件生命周期开始
   //  无提取的数据 无响应式
-  beforeCreate() {},
+  beforeCreate() {
+  },
   //  提取信息 响应式
   created() {
     this.autoStart();
   },
   //  无真实DOM
-  beforeMount() {},
+  beforeMount() {
+  },
   //  真实DOM已经呈现
-  mounted() {},
+  mounted() {
+  },
   //  data prop变动 重新渲染之前
-  beforeUpdate() {},
+  beforeUpdate() {
+  },
   //  重新渲染之后
-  updated() {},
+  updated() {
+  },
   //  组件不需要再呈现
-  beforeDestroy() {},
+  beforeDestroy() {
+  },
   //  销毁组件
   destroyed() {
     //  销毁组件后记得清除计时器

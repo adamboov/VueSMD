@@ -3,14 +3,30 @@ import axios from "axios";
 import { APPCODE } from "@/services/config";
 
 export async function getNewsChannels() {
-  const { data } = await axios.get("http://ali-news.showapi.com/newsListSLI", {
+  const resp = await axios.get("http://ali-news.showapi.com/channelList", {
     headers: {
       Authorization: `APPCODE ${APPCODE}`,
     },
   });
-  return data;
+  return resp.data.showapi_res_body.channelList;
 }
 
-getNewsChannels();
-
-export function getNews() {}
+/**
+ * 按频道分页
+ * @param channelId 频道id
+ * @param page 页码 从1开始
+ * @param limit 每页多少条数据
+ */
+export function getNews(channelId, page = 1, limit = 10) {
+  const resp = axios.get("http://ali-news.showapi.com/newsList", {
+    headers: {
+      Authorization: `APPCODE ${APPCODE}`,
+    },
+    params: {
+      channelId,
+      page,
+      maxResult: limit,
+    },
+  });
+  return resp.data.showapi_res_body.pagebean;
+}
