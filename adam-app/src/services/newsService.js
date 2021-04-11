@@ -17,8 +17,8 @@ export async function getNewsChannels() {
  * @param page 页码 从1开始
  * @param limit 每页多少条数据
  */
-export function getNews(channelId, page = 1, limit = 10) {
-  const resp = axios.get("http://ali-news.showapi.com/newsList", {
+export async function getNews(channelId, page = 1, limit = 10) {
+  const resp = await axios.get("http://ali-news.showapi.com/newsList", {
     headers: {
       Authorization: `APPCODE ${APPCODE}`,
     },
