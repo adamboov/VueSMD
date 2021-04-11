@@ -54,6 +54,8 @@ export default {
     //  切换选中的id
     switchTo(id) {
       this.chooseId = id;
+      //  我知道切换频道了  但是我不知道要干嘛 触发事件  注册事件
+      this.$emit("change", this.chooseId);
     },
   },
 };
