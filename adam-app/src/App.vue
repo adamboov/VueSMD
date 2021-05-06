@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div style="width: 1080px; margin: 0 auto">
-      <!--      <Banner :banners="banners" :duration="3000" />-->
+<!--      <Banner :banners="banners" :duration="3000" />-->
       <!--         <Channels @change="handleChange" />-->
-      <NewsList :news="news" />
+<!--      <NewsList :news="news" />-->
+      <Loading/>
     </div>
   </div>
 </template>
@@ -11,14 +12,17 @@
 <script>
 // import Banner from "./components/Banner";
 // import Channels from "@/components/news/Channels";
-import NewsList from "./components/news/NewsList";
-import { getNews } from "./services/newsService";
+// import NewsList from "./components/news/NewsList";
+// import { getNews } from "./services/newsService";
+import Loading from "./components/Loading";
+import Center from "./compoents/Center";
 
 export default {
   components: {
     // Banner,
     // Channels,
-    NewsList,
+    // NewsList,
+    Loading,
   },
   data() {
     return {
@@ -36,13 +40,13 @@ export default {
       //     link: "https://dark-star.top/images/pic/3.jpg",
       //   },
       // ],
-      news: [],
+      // news: [],
     };
   },
 
   async created() {
-    var resp = await getNews("5572a108b3cdc86cf39001cd");
-    this.news = resp.contentlist
+    // var resp = await getNews("5572a108b3cdc86cf39001cd");
+    // this.news = resp.contentlist
   },
 
   methods: {

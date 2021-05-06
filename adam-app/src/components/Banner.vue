@@ -57,39 +57,34 @@ export default {
       console.log(this.timer);
       this.timer = setInterval(() => {
         this.index = (this.index + 1) % this.banners.length;
-        console.log("定时器--" + this.index);
+        console.log("定时器启动后轮播的第" + this.index + "张图！");
       }, this.duration);
     },
     //  停止自动切换
     autoStop() {
       clearInterval(this.timer);
-      console.log("停止切换" + this.timer);
+      console.log("停止切换null之前" + this.timer);
       this.timer = null;
+      console.log("停止切换null之后" + this.timer);
     },
   },
   //  组件生命周期开始
   //  无提取的数据 无响应式
-  beforeCreate() {
-  },
+  beforeCreate() {},
   //  提取信息 响应式
   created() {
     this.autoStart();
   },
   //  无真实DOM
-  beforeMount() {
-  },
+  beforeMount() {},
   //  真实DOM已经呈现
-  mounted() {
-  },
+  mounted() {},
   //  data prop变动 重新渲染之前
-  beforeUpdate() {
-  },
+  beforeUpdate() {},
   //  重新渲染之后
-  updated() {
-  },
+  updated() {},
   //  组件不需要再呈现
-  beforeDestroy() {
-  },
+  beforeDestroy() {},
   //  销毁组件
   destroyed() {
     //  销毁组件后记得清除计时器

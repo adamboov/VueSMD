@@ -26,6 +26,8 @@ export async function getNews(channelId, page = 1, limit = 10) {
       channelId,
       page,
       maxResult: limit,
+      needAllList: false,
+      needContent: 1,
     },
   });
   return resp.data.showapi_res_body.pagebean;
