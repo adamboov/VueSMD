@@ -3,7 +3,7 @@
     <div v-for="item in news" :key="item.id" class="news-item-normal">
       <div class="image" v-if="item.havePic">
         <a :href="item.link" target="_blank">
-          <img :src="item.img" alt="" />
+          <img :src="item.imageurls[0].url" alt="" />
         </a>
       </div>
       <div class="words">
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  // name: "NewsList",
+  name: "NewsList",
   props: {
     news: {
       type: Array,

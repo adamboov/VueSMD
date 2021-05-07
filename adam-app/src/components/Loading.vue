@@ -18,17 +18,19 @@ export default {
 .loading {
   height: 40px;
   margin: 100px auto;
-  display: flex;
-  justify-content: center;
+  //display: flex;
+  //justify-content: center;
+  text-align: center;
 }
 
 .loading span {
   width: 8px;
   height: 100%;
   border-radius: 4px;
-  background-radius: 4px;
+  background: lightgreen;
   animation: load 1s ease infinite;
   margin: 0 2px;
+  display: inline-block;
 }
 
 @keyframes load {
