@@ -8,14 +8,14 @@
       </div>
       <div class="words">
         <h2 class="title">
-          <a :href="item.link" target="_blank">{{item.title}}</a>
+          <a :href="item.link" target="_blank">{{ item.title }}</a>
         </h2>
         <div class="aside">
-          <span>{{item.channelName}}</span>
-          <span>来源：{{item.source}}</span>
-          <span>发布日期：{{item.pubDate}}</span>
+          <span>{{ item.channelName }}</span>
+          <span>来源：{{ item.source }}</span>
+          <span>发布日期：{{ item.pubDate }}</span>
         </div>
-        <div class="content">{{item.content}}</div>
+        <div class="content">{{ item.content }}</div>
       </div>
     </div>
   </div>
