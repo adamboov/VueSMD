@@ -10,5 +10,13 @@ export default {
       path: "/login",
       component: Login,
     },
+    {
+      path: "/reg",
+      component: () => import("@/views/Reg"),
+    },
+    {
+      path: "/channel/:channelId",
+      component: () => import("@/views/ChannelNews"),
+    },
   ],
 };
