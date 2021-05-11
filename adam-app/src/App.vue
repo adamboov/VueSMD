@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <!--        <div style="width: 1080px; margin: 0 auto">-->
     <!--          <Banner :banners="banners" :duration="3000" />-->
     <!--         <Channels @change="handleChange" />-->
@@ -25,6 +26,7 @@
 // import Center from "./components/Center";
 // import Modal from "@/components/Modal";
 import Home from "@/views/Home";
+import Header from "@/components/Header";
 
 export default {
   components: {
@@ -35,6 +37,7 @@ export default {
     // Loading,
     // Center,
     Home,
+    Header,
   },
   data() {
     return {
@@ -68,3 +71,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container {
+  margin: 30px auto;
+}
+</style>
