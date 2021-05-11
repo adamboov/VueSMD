@@ -12,7 +12,8 @@
     <!--    </modal>-->
     <!--    </div>-->
     <div class="container">
-      <Home />
+      <!--      <Home />-->
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -25,7 +26,7 @@
 // import Loading from "./components/Loading";
 // import Center from "./components/Center";
 // import Modal from "@/components/Modal";
-import Home from "@/views/Home";
+// import Home from "@/views/Home";
 import Header from "@/components/Header";
 
 export default {
@@ -36,7 +37,7 @@ export default {
     // NewsList,
     // Loading,
     // Center,
-    Home,
+    // Home,
     Header,
   },
   data() {
