@@ -8,6 +8,7 @@ import Center from "@/components/Center";
 export default {
   name: "ChannelNews",
   components: { Center },
+  created() {},
 };
 </script>
 

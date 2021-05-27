@@ -3,9 +3,10 @@
     <div class="header-container">
       <div class="container">
         <div class="logo">
-          <a href="">
+          <router-link to="">
             <img src="../assets/logo.png" alt="" />
-          </a>
+          </router-link>
+          >
         </div>
         <ul class="nav">
           <li><a href="">首页</a></li>
@@ -15,7 +16,7 @@
           <li><a href="">Facere.</a></li>
         </ul>
         <div class="user">
-          <a href="">登录</a>
+          <router-link to="/login">登录</router-link>
           <a href="">注册</a>
         </div>
       </div>

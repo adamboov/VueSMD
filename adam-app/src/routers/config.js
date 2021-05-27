@@ -1,4 +1,5 @@
 import Login from "@/views/Login";
+
 export default {
   mode: "history",
   routes: [
@@ -17,6 +18,10 @@ export default {
     {
       path: "/channel/:channelId",
       component: () => import("@/views/ChannelNews"),
+    },
+    {
+      path: "*",
+      component: () => import("@/views/NotFound"),
     },
   ],
 };
