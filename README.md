@@ -2,7 +2,19 @@
 # 配置源地址
     npm config set registry http://registry.npm.taobao.org/
     npm config get registry  
+##  配置 与 删除
+    npm config set registry https://registry.npm.taobao.org
+    npm config set disturl https://npm.taobao.org/dist
 
+    npm config delete registry
+    npm config delete disturl
+## 一些安装的依赖
+    npm i -g cnpm
+    npm i -g prettier
+    npm i -g @vue/cli
+    npm i -g create-react-app
+    npm i -g create-next-app
+    npm i -g yarn
 ## 特点  
     渐进式
 
