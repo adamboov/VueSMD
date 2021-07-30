@@ -3,6 +3,7 @@
     npm config set registry http://registry.npm.taobao.org/
     npm config get registry  
 ##  配置 与 删除
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
     npm config set registry https://registry.npm.taobao.org
     npm config set disturl https://npm.taobao.org/dist
 
