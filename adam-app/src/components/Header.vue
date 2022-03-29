@@ -3,21 +3,28 @@
     <div class="header-container">
       <div class="container">
         <div class="logo">
-          <router-link to="">
+          <router-link :to="{ name: 'Home' }">
             <img src="../assets/logo.png" alt="" />
           </router-link>
           >
         </div>
         <ul class="nav">
-          <li><a href="">首页</a></li>
-          <li><a href="">Iste.</a></li>
-          <li><a href="">Quia.</a></li>
-          <li><a href="">Voluptates?</a></li>
-          <li><a href="">Facere.</a></li>
+          <li>
+            <router-link :to="{ name: 'Home' }">首页</router-link>
+          </li>
+          <li v-for="item in channels.slice(0, 5)" :key="item.channelId">
+            <router-link
+              :to="{
+                name: 'ChannelNews',
+                params: { channelId: item.channelId },
+              }"
+              >{{ item.name }}
+            </router-link>
+          </li>
         </ul>
         <div class="user">
-          <router-link to="/login">登录</router-link>
-          <a href="">注册</a>
+          <router-link :to="{ name: 'Login' }">登录</router-link>
+          <router-link :to="{ name: 'Reg' }">注册</router-link>
         </div>
       </div>
     </div>
@@ -25,8 +32,18 @@
 </template>
 
 <script>
+import { getNewsChannels } from "@/services/newsService";
+
 export default {
   name: "Header",
+  data() {
+    return {
+      channels: [],
+    };
+  },
+  async created() {
+    // this.channels = await getNewsChannels();
+  },
 };
 </script>
 

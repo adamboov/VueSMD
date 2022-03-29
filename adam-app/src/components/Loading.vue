@@ -18,8 +18,8 @@ export default {
 .loading {
   height: 40px;
   margin: 100px auto;
-  //display: flex;
-  //justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   text-align: center;
 }
 
