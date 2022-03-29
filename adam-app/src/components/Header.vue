@@ -42,7 +42,7 @@ export default {
     };
   },
   async created() {
-    // this.channels = await getNewsChannels();
+    this.channels = await getNewsChannels();
   },
 };
 </script>
