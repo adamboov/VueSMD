@@ -18,6 +18,7 @@
       href=""
       class="pager-item"
       :class="{ active: n === page }"
+      @click.prevent="handleChange(n)"
       v-for="n in numbers"
       :key="n"
       >{{ n }}</a
