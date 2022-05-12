@@ -1,15 +1,30 @@
 <template>
-  <Center> some 组件id {{ $route.params.channelId }}</Center>
+  <div>
+    <Pager
+      :page="page"
+      :limit="10"
+      :total="100"
+      :panelNumber="7"
+      @pageChange="handleChange"
+    ></Pager>
+  </div>
 </template>
 
 <script>
-import Center from "@/components/Center";
+import Pager from "@/components/Pager";
 
 export default {
   name: "ChannelNews",
-  components: { Center },
-  created() {
-    console.log(this.$route);
+  components: { Pager },
+  data() {
+    return {
+      page: 3,
+    };
+  },
+  methods: {
+    handleChange(newPage) {
+      this.page = newPage;
+    },
   },
 };
 </script>
